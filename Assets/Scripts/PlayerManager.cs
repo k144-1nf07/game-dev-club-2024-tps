@@ -10,7 +10,11 @@ public class PlayerManager : MonoBehaviour
 
     [Header("Aim")]
     [SerializeField]
+
     private CinemachineVirtualCamera aimCam;
+
+    [SerializeField]
+    private GameObject crosshair;
 
     // Start is called before the first frame update
     void Start()
@@ -24,11 +28,13 @@ public class PlayerManager : MonoBehaviour
         if(input.aim)
         {
             aimCam.gameObject.SetActive(true);
+            crosshair.SetActive(true);
         }
 
         else
         {
             aimCam.gameObject.SetActive(false);
+            crosshair.SetActive(false);
         }
     }
 }
